@@ -64,6 +64,7 @@ form {
 	transition: 200ms linear;
 }
 
+
 form:focus-within,
 form:hover {
 	border-color: #06d6a0;
@@ -81,7 +82,15 @@ form input[type="number"] {
 	font-size: 1.25rem;
 }
 
+@media (max-width : 768px) {
+    form input[type="number"] {
+        font-size: 0.8rem;
+    }
+    
+}
+
 form input[type="submit"] {
+    display: flex;
 	appearance: none;
 	outline: none;
 	border: none;
@@ -95,8 +104,9 @@ form input[type="submit"] {
 	font-weight: 700;
 	transition: 200ms linear;
 	border-left: 3px solid transparent;
-    
 }
+
+  
 
 form input[type="submit"]:hover {
 	background-color: white;
