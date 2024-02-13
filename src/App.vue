@@ -23,6 +23,10 @@ const currentWeight = computed(() => {
 });
 
 const addWeight = () => {
+  if (!weightInput.value) {
+    alert("Masukkan berat badan terlebih dahulu!");
+    return;
+  }
   weights.value.push({
     weight: weightInput.value,
     date: new Date().getTime(),
@@ -103,14 +107,20 @@ function updateChart(newWeights) {
       <span>{{ currentWeight.weight }}kg</span>
       <small>Berat Badan Saat ini</small>
       <div v-if="currentWeight.weight > 60">
-        <br>
+        <br />
         <bold>Kamu harus diet.</bold>
         <p>🙄</p>
       </div>
     </div>
 
     <form @submit.prevent="addWeight">
-      <input type="number" min="0.1" step="0.1" v-model="weightInput" placeholder="Berat badan kamu saat ini..."/>
+      <input
+        type="number"
+        min="0.1"
+        step="0.1"
+        v-model="weightInput"
+        placeholder="Berat badan kamu saat ini..."
+      />
       <input type="submit" value="Tambah" />
     </form>
 
@@ -130,7 +140,6 @@ function updateChart(newWeights) {
           </li>
         </ul>
       </div>
-
     </div>
   </main>
 </template>
