@@ -135,7 +135,7 @@ function updateChart(newWeights) {
         <h2>Catatan Berat Badan</h2>
         <ul>
           <li v-for="weight in weights">
-            <span>{{ weight.weight }}</span>
+            <span>{{ weight.weight }} kg</span>
             <small>{{ new Date(weight.date).toLocaleDateString() }}</small>
           </li>
         </ul>
